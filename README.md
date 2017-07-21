@@ -26,20 +26,21 @@ $ sudo apt-get install git
 summary of configurations
 ---------------------------------------
 Update all currently installed packages
-sudo apt-get update
-sudo apt-get upgrade
+$ sudo apt-get update
+$ sudo apt-get upgrade
 
 Change the SSH port from 22 to 2200
 sudo nano modify /etc/ssh/sshd_config
 and change port to 2200
 restart ssh sudo service ssh restart
 
+------------------------------------------
 Configure the Uncomplicated Firewall (UFW) 
 sudo ufw status 
 sudo ufw enable 
 
 allow to port 80
-sudo ufw allow 80/tcp
+$ sudo ufw allow 80/tcp
 
 allow to port 123 NTP
 $ sudo ufw allow 123/udp
@@ -51,12 +52,12 @@ add user grader
 $ sudo adduser grader 
 
 set password to user
-sudo passwd grader
+$ sudo passwd grader
 
 Give grader the permission to sudo
-sudo usermod -a -G sudo hduser
+$ sudo usermod -a -G sudo hduser
 
-
+-------------------------------------
 Configure the local timezone to UTC
 sudo dpkg-reconfigure tzdata
 
