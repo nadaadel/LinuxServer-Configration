@@ -36,8 +36,8 @@ restart ssh sudo service ssh restart
 
 ------------------------------------------
 Configure the Uncomplicated Firewall (UFW) 
-sudo ufw status 
-sudo ufw enable 
+$ sudo ufw status 
+$ sudo ufw enable 
 
 allow to port 80
 $ sudo ufw allow 80/tcp
