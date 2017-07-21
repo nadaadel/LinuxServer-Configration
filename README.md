@@ -9,21 +9,18 @@ password 654321
 summary of software installed
 ---------------------------------------
 installing apache server on machine 
-run  sudo apt-get install apache2
+$ sudo apt-get install apache2
 
 install mod_wsgi
-run sudo apt-get install libapache2-mod-wsgi
+$ sudo apt-get install libapache2-mod-wsgi
 Enable mod_wsgi 
-sudo a2enmod wsgi
+$ sudo a2enmod wsgi
 
 install PostgreSQL
 run sudo apt-get install postgresql
 
 install git
-sudo apt-get install git
-
-
-
+$ sudo apt-get install git
 
 ---------------------------------------
 summary of configurations
