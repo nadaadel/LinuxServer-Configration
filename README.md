@@ -76,7 +76,7 @@ and change port to 2200
    
     $ sudo dpkg-reconfigure tzdata
 
-Disable ssh login for root user
+## Disable ssh login for root user
 
     $ sudo nano /etc/ssh/sshd_config
 
@@ -87,7 +87,7 @@ then
 
     $ sudo service ssh restart
     
-Configure key-based authentication for grader user
+### Configure key-based authentication for grader user on local 
  
     $ ssh-keygen
     
