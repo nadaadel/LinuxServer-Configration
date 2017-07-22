@@ -1,14 +1,10 @@
 # LinuxServer-Configration
 
-### The IP address http://35.190.157.186/  and SSH port = 2200 
+## IP address http://35.190.157.186/  and SSH port = 2200 
   
 ## SSH key you created for the grader user.
-    ssh  grader@35.190.157.186 -p 2200 -i [RSA_FILE]
+    $ ssh  grader@35.190.157.186 -p 2200 -i [RSA_FILE]
       
-##  Update all installed packages
-    sudo apt-get update
-    sudo apt-get upgrade
- 
 ---------------------------------------
 summary of software installed
 ---------------------------------------
@@ -34,7 +30,7 @@ install git
 ---------------------------------------
 summary of configurations
 ---------------------------------------
-Update all currently installed packages
+### Update all currently installed packages
  
     $ sudo apt-get update
     $ sudo apt-get upgrade
@@ -95,7 +91,7 @@ Configure key-based authentication for grader user
  
     $ ssh-keygen
     
-####  on server
+####  on server config the authorized keys
     $ mkdir .ssh
     $ touch .ssh/authorized_keys
     $ chmod 700 .ssh
@@ -106,10 +102,11 @@ Configure key-based authentication for grader user
     $ sudo mkdir /var/www/catalog
 
 ## Clone the itemCatalog to the catalog directory:
-    $ git clone https://github.com/alihassan161820/itemCatalog catalog
+    $ git clone https://github.com/nadaadel/ItemCatalog.git
 
 ## Make a catalog.wsgi file :
-    $ touch catalog.wsgi && nano catalog.wsgi
+    $ sudo touch catalog.wsgi 
+    $ sudo nano catalog.wsgi
 
 ## Edit catalog.wsgi file :   
     import sys
@@ -117,10 +114,7 @@ Configure key-based authentication for grader user
     logging.basicConfig(stream=sys.stderr)
     sys.path.insert(0, "/var/www/catalog/")
     from project import app as application
-
-#### Inside project.py database connection :
-    engine = create_engine('postgresql://catalog:password@localhost/catalog')
- 
+    
 ## Edit the default Virtual File :
    $  sudo nano /etc/apache2/sites-available/000-default.conf
    
@@ -142,9 +136,30 @@ Configure key-based authentication for grader user
           CustomLog ${APACHE_LOG_DIR}/access.log combined
         </VirtualHost>
 
+## config database postgresql
+
+    psql
+    CREATE USER catalog WITH PASSWORD 'password';
+    ALTER USER catalog CREATEDB;
+    CREATE DATABASE catalog WITH OWNER catalog;
+    \c catalog
+    REVOKE ALL ON SCHEMA public FROM public;
+    GRANT ALL ON SCHEMA public TO catalog;
+    \q
+    exit
+    
+
+#### edit project.py , lotsofmenus.py , database setup.py database connection :
+    engine = create_engine('postgresql://catalog:password@localhost/catalog')
+ 
+## run database setup 
+    python /var/www/catalog/catalog/database_setup.py
+    
+## insert dummy data to database 
+    python lotsof menus.py 
+    
 
 ## start the apache server 
-
     $ sudo service apache2 start
 
 
