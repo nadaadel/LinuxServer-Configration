@@ -26,6 +26,17 @@ install PostgreSQL
 install git
 
      $ sudo apt-get install git
+     
+Install pip
+
+     $ sudo apt-get install python-pip
+Install Flask
+
+     $ pip install Flask
+     
+Install other project dependencies 
+
+     $ sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils
 
 ---------------------------------------
 summary of configurations
