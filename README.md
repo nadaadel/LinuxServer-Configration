@@ -164,7 +164,7 @@ then
     python /var/www/catalog/catalog/database_setup.py
     
 ## insert dummy data to database 
-    python lotsof menus.py 
+    python lotsofmenus.py 
     
 
 ## start the apache server 
