@@ -1,10 +1,10 @@
 # LinuxServer-Configration
 
-## IP address http://35.190.157.186/  and SSH port = 2200 
+### IP address http://35.190.157.186/ 
   
-## SSH key you created for the grader user.
+### SSH for the grader user
     $ ssh  grader@35.190.157.186 -p 2200 -i [RSA_FILE]
-      
+    
 ---------------------------------------
 summary of software installed
 ---------------------------------------
