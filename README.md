@@ -46,14 +46,14 @@ summary of configurations
     $ sudo apt-get update
     $ sudo apt-get upgrade
 
-Change the SSH port from 22 to 2200
+## Change the SSH port from 22 to 2200
 
     $ sudo nano modify /etc/ssh/sshd_config
-and change port to 2200
+    
+## restart ssh service
 
-    $restart ssh sudo service ssh restart
+    $ sudo service ssh restart
 
-------------------------------------------
 ## Configure the Uncomplicated Firewall (UFW) 
 
     $ sudo ufw status 
@@ -68,9 +68,7 @@ and change port to 2200
     
     $ sudo ufw allow 2200/tcp
     
-    
-    
-  ## add user grader   
+## add user grader   
     
     $ sudo adduser grader 
     
@@ -82,7 +80,6 @@ and change port to 2200
     $ sudo usermod -a -G sudo hduser
 
 
--------------------------------------
 ## Configure the local timezone to UTC
    
     $ sudo dpkg-reconfigure tzdata
@@ -172,7 +169,4 @@ then
 
 ## start the apache server 
     $ sudo service apache2 start
-
-
-
 
